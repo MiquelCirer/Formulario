@@ -11,3 +11,5 @@ Finalmente por mucho que lo he intentado, no he conseguido que al compartir
 la página en Facebook me aparezca lo que tiene que aparecer.
 En conclusión creo que este trabajo me ha servido para aprender sobre xml y 
 json, pero tambien a consolidar algunas cosas de javascript de css o de html.
+
+https://cdn.rawgit.com/MiquelCirer/Formulario/d67de089/index.html
