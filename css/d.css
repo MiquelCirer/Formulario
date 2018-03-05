@@ -1,0 +1,120 @@
+body,html{
+	margin:0px
+}
+body{
+
+	background-color:#e0f2f1;
+
+}
+body,input,select,label{
+	font-size:2vw
+}
+h3{
+	color:#00ACC1;
+	font-size:2vw;
+}
+h2{
+	text-align:center;
+}
+select{
+	width:50%;
+}
+input[type=checkbox]{
+	width:5%;
+	zoom:1.5
+}
+input[type=text]{
+	background-color: #e0f2f1;
+}
+input[type=submit]{
+	margin:5%;
+	margin-left: 30%;
+	width: 35%;
+	font-family: sans-serif ;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #00ACC1;
+	color: #E3F2FD;
+	cursor: pointer;
+
+}
+form{
+	border-radius: 10px 10px 10px 10px;
+	margin-top: 0%;
+	margin-bottom:10%;
+	margin-left:15%;
+	margin-right:15%;
+	background-color:#F8F8FF;
+	padding:3%;
+	font-family: sans-serif ;
+}
+#resultadosDiv {
+	width: 50%;
+	position: relative;
+	margin-left: 25%;
+	background: #00838F;
+	text-align: center;	
+	color: #B2EBF2;
+	border-radius: 10px 10px 10px 10px;
+	font-family: sans-serif ;
+	font-size: 1.5vw;
+}
+#resultadoTotal {
+	width: 80%;
+	margin-left: 10%;
+	color: #00838F;
+	border-radius: 10px 10px 10px 10px;
+	font-family: sans-serif ;
+	font-size: 1.3vw;
+}
+#total{
+	text-align: center;
+	font-size: 5vw;
+}
+#respuestasDetalladas{
+	text-align:center;
+	cursor: pointer;
+}
+#cabecera{
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+	height: 25%;
+	background-color: #AFEEEE;	
+	margin: 2%;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-family: sans-serif ;
+}
+#logo{
+	width: 20%;
+}
+#titulo{
+	float: right;
+	width: 70%;
+	font-family: sans-serif;
+	font-size: 4.5vw;
+	color: #00838F;
+}
+table{
+	background-color:#e0f2f1;
+	border-radius:10px 10px 10px 10px;
+	color:#B2EBF2;
+}
+td{
+	background-color:#00ACC1;
+}
+td,tr,th{
+	border-radius:12px 12px 12px 12px;
+	border:5px solid;
+	border-color:#e0f2f1;
+	padding:8px;
+	border:2px solid;
+	border-color:#e0f2f1;
+	padding:2px;
+	vertical-align:top
+}
+th{
+	background-color:#00838F;
+	color:#E0F7FA;
+}
+	
+

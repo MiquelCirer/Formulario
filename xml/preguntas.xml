@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+
+<!-- !DOCTYPE questions SYSTEM "preguntas.dtd"!-->
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='preguntas.xsd'>
+	<question id="quest001">
+		<type>text</type>
+		<title>¿Cual es el protocolo de seguridad utilizado en las paginas web?</title>
+		<answer>https</answer>
+	</question>
+	<question id="quest002">
+		<type>select</type>
+		<title>¿Que significado tienen las siglas CSS?</title>
+		<option>Cascading Style Sheet</option>
+		<option>Concatening Style Sheet</option>
+		<option>Coworking on Style Sheet</option>
+		<answer>0</answer>
+	</question>
+	<question id="quest003">
+		<type>checkbox</type>
+		<title>¿Como no se declara una variable en JavaScript?</title>
+		<option>nuevaVariable = true;</option>
+		<option>public boolean nuevaVariable = true;</option>
+		<option>var nuevaVariable = true;</option>
+		<answer>0</answer>
+		<answer>1</answer>
+	</question>
+	<question id="quest004">
+		<type>radio</type>
+		<title>Según el siguiente codigo, ¿que se mostrará en pantalla?</title>
+		<option>Hola</option>
+		<option>Adiós</option>
+		<option>No se mostrará nada</option>
+		<answer>1</answer>
+	</question>
+	<question id="quest005">
+		<type>select multiple</type>
+		<title>¿De que modos es posible modificar colores a una pagina web mediante css?</title>
+		<option>Mediante el codigo RGB</option>
+		<option>Hexadecimal</option>
+		<option>Mediante el nombre del color</option>
+		<option>Binario</option>
+		<answer>1</answer>
+		<answer>2</answer>
+		<answer>3</answer>
+	</question>
+	<question id="quest006">
+		<type>text</type>
+		<title>¿Que parámetro permite modificar la altura de los elementos mediante css?</title>
+		<answer>height</answer>
+	</question>
+	<question id="quest007">
+		<type>select</type>
+		<title>¿Cual de estas NO es una propiedad de posición en CSS?</title>
+		<option>static</option>
+		<option>relative</option>
+		<option>fixed</option>
+		<option>floating</option>
+		<option>absolute</option>
+		<answer>3</answer>
+	</question>
+	<question id="quest008">
+		<type>checkbox</type>
+		<title>¿Cómo se declara que el ancho de un div sera el 100% en css?</title>
+		<option>height: 50%;</option>
+		<option>width: 500px;</option>
+		<option>width: 100%;</option>
+		<option>anchura: 100%;</option>
+		<answer>2</answer>
+	</question>
+	<question id="quest009">
+		<type>radio</type>
+		<title>¿Cual de los siguientes códigos CSS es correcto?</title>
+		<option>background-image: src='../img/fondo.png';</option>
+		<option>background: image-url='../img/fondo.png';</option>
+		<option>background-image: url('../img/fondo.png');</option>
+		<answer>2</answer>
+	</question>
+	<question id="quest010">
+		<type>select multiple</type>
+		<title>¿Cuales de los siguientes operadores son correctos en JavaScript?</title>
+		<option>A) -</option>
+		<option>B) *+</option>
+		<option>C) ÷</option>
+		<option>D) %</option>
+		<option>E) ++</option>
+		<answer>1</answer>
+		<answer>4</answer>
+		<answer>5</answer>
+	</question>
+</questions>
