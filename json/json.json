@@ -1,0 +1,125 @@
+{
+  "questions": {
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xsi:noNamespaceSchemaLocation": "preguntas.xsd",
+    "question": [
+      {
+        "-id": "quest001",
+        "type": "text",
+        "title": "¿En que año se fundó el Mallorca?",
+        "answer": "1916"
+      },
+      {
+        "-id": "quest002",
+        "type": "select",
+        "title": "¿Quien és el máximo goleador histórico del Mallorca?",
+        "option": [
+          "Eto'o",
+          "Güiza",
+          "Messi"
+        ],
+        "answer": "0"
+      },
+      {
+        "-id": "quest003",
+        "type": "checkbox",
+        "title": "¿Quienes han entrenado al Mallorca?",
+        "option": [
+          "Cúper",
+          "Manzano",
+          "Valverde"
+        ],
+        "answer": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "-id": "quest004",
+        "type": "radio",
+        "title": "¿Cuántas copas del Rey tiene el Mallorca?",
+        "option": [
+          "2",
+          "1",
+          "0"
+        ],
+        "answer": "1"
+      },
+      {
+        "-id": "quest005",
+        "type": "select multiple",
+        "title": "¿Qué colores representan al Mallorca?",
+        "option": [
+          "Azul",
+          "Rojo",
+          "Negro",
+          "Blanco"
+        ],
+        "answer": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "-id": "quest006",
+        "type": "text",
+        "title": "¿En que división juega actualmente el Mallorca?",
+        "answer": "2B"
+      },
+      {
+        "-id": "quest007",
+        "type": "select",
+        "title": "¿Cuál és la mascota del Mallorca?",
+        "option": [
+          "Perro",
+          "Gato",
+          "Ángel",
+          "Dimonió",
+          "Toro"
+        ],
+        "answer": "3"
+      },
+      {
+        "-id": "quest008",
+        "type": "checkbox",
+        "title": "¿En qué estadio juega actualmente el Mallorca?",
+        "option": [
+          "Lluís Sitjar",
+          "Camp Nou",
+          "Son Moix",
+          "Santiago Bernabeu"
+        ],
+        "answer": "2"
+      },
+      {
+        "-id": "quest009",
+        "type": "radio",
+        "title": "¿Cuál ha sido la mejor posición del Mallorca en primera?",
+        "option": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "2"
+      },
+      {
+        "-id": "quest010",
+        "type": "select multiple",
+        "title": "¿Cuales de los siguientes jugadores han jugado en el Mallorca?",
+        "option": [
+          "Nunes",
+          "Messi",
+          "Juanpe",
+          "Aouate",
+          "Güiza"
+        ],
+        "answer": [
+          "1",
+          "4",
+          "5"
+        ]
+      }
+    ]
+  }
+}
