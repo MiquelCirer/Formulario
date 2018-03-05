@@ -33,7 +33,7 @@ window.onload = function(){
 		return false;
 	}
 
-	
+	//	LEER XML de xml/preguntas.xml
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -43,17 +43,17 @@ window.onload = function(){
 	xhttp.open("GET", "xml/preguntas.xml", true);
  	xhttp.send();
 
-	
+	//Funcion para no tener que usar el control en las preguntas de multiple select
 	window.onmousedown = function (e) {
 	    var el = e.target;
 	    if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
 		e.preventDefault();
 
-		
+		// toggle selection
 		if (el.hasAttribute('selected')) el.removeAttribute('selected');
 		else el.setAttribute('selected', '');
 
-		
+		// hack to correct buggy behavior
 		var select = el.parentNode.cloneNode(true);
 		el.parentNode.parentNode.replaceChild(select, el.parentNode);
 	    }
@@ -64,28 +64,28 @@ window.onload = function(){
 		document.getElementById("resultadosDiv").style.display = "block";
 	}
 }
-
-
-
+//****************************************************************************************************
+// 						Ponemos los datos del XML en el HTML
+//****************************************************************************************************
 
 function gestionarXml(dadesXml){
 	xmlDoc = dadesXml.responseXML;
 
 
-	
+	//**********	TEXT	**********
 	var tituloPregunta=xmlDoc.getElementsByTagName("title")[0].innerHTML;
 	var idPregunta= "tituloInput";
 	ponerDatosText(tituloPregunta, idPregunta);
 	respuestaInput=xmlDoc.getElementById("quest001").getElementsByTagName("answer")[0].innerHTML;
 	
-	
+	//**********	TEXT 2	**********
 	tituloPregunta=xmlDoc.getElementsByTagName("title")[5].innerHTML;
 	idPregunta= "tituloInput2";
 	ponerDatosText(tituloPregunta, idPregunta);
 	respuestaInput2=xmlDoc.getElementById("quest006").getElementsByTagName("answer")[0].innerHTML;
 
 
-	
+	//**********	SELECT	**********
 	tituloPregunta=xmlDoc.getElementsByTagName("title")[1].innerHTML;
 	idPregunta = "tituloSelect";
 	var selectPosition = 0;
@@ -94,7 +94,7 @@ function gestionarXml(dadesXml){
 	ponerDatosSelect(tituloPregunta,nodeSelect, idPregunta, selectPosition);
 	respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 
-	
+	//**********	SELECT 2	**********
 	tituloPregunta=xmlDoc.getElementsByTagName("title")[6].innerHTML;
 	idPregunta = "tituloSelect2";
 	selectPosition = 2;
@@ -103,7 +103,7 @@ function gestionarXml(dadesXml){
 	ponerDatosSelect(tituloPregunta,nodeSelect, idPregunta, selectPosition);
 	respuestaSelect2= parseInt(xmlDoc.getElementById("quest007").getElementsByTagName("answer")[0].innerHTML);
 
-	
+	//**********	CHECKBOX	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[2].innerHTML;
 	var idDiv = "checkboxDiv";
 	idPregunta = "tituloCheckbox";
@@ -116,7 +116,7 @@ function gestionarXml(dadesXml){
 		respuestasCheckbox[i]=xmlDoc.getElementById("quest003").getElementsByTagName("answer")[i].innerHTML;
 	}
 	
-	
+	//**********	CHECKBOX 2	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[7].innerHTML;
 	idDiv = "checkboxDiv2";
 	idPregunta = "tituloCheckbox2";
@@ -129,7 +129,7 @@ function gestionarXml(dadesXml){
 		respuestasCheckbox2[i]=xmlDoc.getElementById("quest008").getElementsByTagName("answer")[i].innerHTML;
 	}
 
-	
+	//**********	RADIO	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[3].innerHTML;
 	idDiv = "radioDiv";
 	idPregunta = "tituloRadio";
@@ -139,7 +139,7 @@ function gestionarXml(dadesXml){
 
 	respuestaRadio=xmlDoc.getElementById("quest004").getElementsByTagName("answer")[0].innerHTML;	
 	
-	
+	//**********	RADIO 2	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[8].innerHTML;
 	idDiv = "radioDiv2";
 	idPregunta = "tituloRadio2";	
@@ -149,7 +149,7 @@ function gestionarXml(dadesXml){
 	 
 	respuestaRadio2=xmlDoc.getElementById("quest009").getElementsByTagName("answer")[0].innerHTML;	
 
-	
+	//**********	MULTIPLE	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[4].innerHTML;
 	idPregunta = "tituloMultiple";
 	selectPosition = 1;
@@ -162,7 +162,7 @@ function gestionarXml(dadesXml){
 		respuestasMultiple[i]=xmlDoc.getElementById("quest005").getElementsByTagName("answer")[i].innerHTML;
 	}
 
-	
+	//**********	MULTIPLE2	**********
 	tituloPregunta = xmlDoc.getElementsByTagName("title")[9].innerHTML;
 	idPregunta = "tituloMultiple2";
 	selectPosition = 3;
@@ -175,9 +175,9 @@ function gestionarXml(dadesXml){
 		respuestasMultiple2[i]=xmlDoc.getElementById("quest010").getElementsByTagName("answer")[i].innerHTML;
 	}
 }
-
-
-
+//****************************************************************************************************
+//							implementación de la corrección
+//****************************************************************************************************
 
 function corregirText(id, respuesta, numPreg){
 	var s=document.getElementById(id).value;     
@@ -205,12 +205,12 @@ function corregirCheckbox(id, respuestas,numPreg){
 			for (j = 0; j < respuestas.length; j++) {
 				if (i==respuestas[j]) escorrecta[i]=true;
 			}
-			
+			//si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
 			if (escorrecta[i]) {
-				nota +=1.0/respuestas.length;  
+				nota +=1.0/respuestas.length;  //dividido por el número de respuestas posibles
 				notaCheckbox +=1.0/respuestas.length;
 			} else {
-				nota -=1.0/respuestas.length;    
+				nota -=1.0/respuestas.length;  //dividido por el número de respuestas posibles   
 			}   
 		}
 	}
@@ -222,13 +222,13 @@ function corregirRadio(id, respuesta, numPreg){
 	var notaRadio = 0;
 	var input = document.getElementById(id).getElementsByTagName("input");
 	var escorrecta = null;
-	for (i = 0; i < input.length; i++) {  
+	for (i = 0; i < input.length; i++) {  //"rd" es el nombre asignado a todos los radio.
 		if(input[i].checked) {
 			escorrecta=false;   
 			if (i==respuesta) escorrecta=true;
-			
+			//si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
 			if (escorrecta) {
-				notaRadio +=1.0;  
+				notaRadio +=1.0;  //dividido por el número de respuestas posibles
 				nota +=1.0;
 			}   
 		}
@@ -261,9 +261,9 @@ function corregirMultiple(id, respuestas, numPreg){
 		darRespuestaHtml(numPreg + " pregunta: 0 puntos");
 	} else darRespuestaHtml(numPreg + " pregunta: 1 punto")
 }
-
-
-
+//****************************************************************************************************
+//							poner los datos recibios en el HTML	
+//****************************************************************************************************
 function ponerDatosText(title, id){
 	document.getElementById(id).innerHTML = title;
 }
@@ -318,9 +318,9 @@ function ponerDatosRadio(title,nodes, iDiv, idPreg, tag){
 		result = nodes.iterateNext();
 		}    
 }
-
-
-
+//****************************************************************************************************
+//						Gestionar la presentación de las respuestas
+//****************************************************************************************************
 function darRespuestaHtml(r){
 	var p = document.createElement("p");
 	var node = document.createTextNode(r);
@@ -353,19 +353,19 @@ function inicializar(){
 	document.getElementById('resultadosDiv').innerHTML = "";
 	nota=0.0;
 }
-
-
-
+//****************************************************************************************************
+//									Comprobar respuestas 
+//****************************************************************************************************
 function comprobar(){
 	var f=formElement;
 	var checked=false;
 	var checked2=false;
 	var radioSelected=false;
 	var radioSelected2=false;
-	for (i = 0; i < f.chckbx.length; i++) {  
+	for (i = 0; i < f.chckbx.length; i++) {  //"chckbx" es el nombre asignado a todos los checkbox
 		if (f.chckbx[i].checked) checked=true;
 	}
-	for (i = 0; i < f.chckbx2.length; i++) {  
+	for (i = 0; i < f.chckbx2.length; i++) {  //"chckbx" es el nombre asignado a todos los checkbox
 		if (f.chckbx2[i].checked) checked2=true;
 	}
 	for (i = 0; i < f.rd.length; i++) {
