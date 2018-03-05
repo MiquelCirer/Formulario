@@ -67,6 +67,7 @@ window.onload = function(){
 
 
 
+
 function gestionarXml(dadesXml){
 	xmlDoc = dadesXml.responseXML;
 
